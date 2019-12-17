@@ -8,10 +8,11 @@ class P2b extends Frame implements ActionListener
     private TextArea editor = new TextArea(10,40);
     P2b()
     {
+        super("List");
         bdel = new Button("Delete");
+        Panel panel = new Panel();
         bdel.addActionListener(this);
         panel.add(bdel);
-        super("List");
         String lt[] = { "List oficjalny", "List firmowy", "List mily", };
         htf.put(lt[0], "Szanowny Panie!\n\nZ powazaniem\n" );
         htf.put(lt[1],"W nawiazaniu do pisma z dnia ... uprzejmie ");
@@ -36,7 +37,6 @@ class P2b extends Frame implements ActionListener
         }
         setMenuBar(mbar);
         add(editor, "Center");
-        Panel panel = new Panel();
         panel.setLayout(new GridLayout(1,ad.length));
         for (int i = 0; i < ad.length; i++)
         {
